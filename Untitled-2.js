@@ -1,0 +1,1 @@
+$(eval response = $(urlfetch json https://api.henrikdev.xyz/valorant/v1/mmr-history/na/draxick/000); try { json = JSON.parse(response); currenttierpatched = json.data.currenttierpatched; elo = json.data.elo; currenttierpatched && elo == null ? "None" : "[" + currenttierpatched + "]: " + elo + "."; } catch(e){${e}: ${response}.substr(0, 400)})
